@@ -1,0 +1,4 @@
+bushStateOfTheUnion2004.txt
+clintonStateOfTheUnion1996.txt
+clintonStateOfTheUnion2000.txt
+obamaStateOfTheUnion2012.txt
