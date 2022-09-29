@@ -57,25 +57,24 @@ public class ShingleThis
     }
 
     public void grammify() {
-    	//iterates through all the words in the file, stopping at the size minus the k value so the k value plus one
-    	//always includes the last word perfectly
+    	//iterates through all the words in the file, stopping in a way that, depending
+    	//on what k is, stops so the last word is included in a k-length shingle
     	for(int i = 0; i < wordsInFile.size() - k + 1; i++)
     	{
     		String str = "";
     		//starts looping through the file starting from the index i, stopping when when 
-    		//either the last word has been looped through, or the loop has counted k times foward
-    		//
+    		//either the last word has been looped through, or the loop has counted k times forward
     		for (int j = i; j < i + k && j < wordsInFile.size(); j++)
     		{
-//    			if(j < wordsInFile.size())
-    			//Concatenate the word to the string, then add a sapce
+    			//Concatenates all the words that are k times forward, including i into
+    			//one string to be enqueued
     			str += wordsInFile.get(j) + " ";
     			
     		}
-//    		q1.en
     		//remove leading whitespace
     		str.trim();
-    		//if a duplicate is detected, it is not queued.
+    		//if a duplicate is detected, duplicate's value becomes true and 
+    		//str is not enqueued
     		boolean duplicate = false;
     		for(String s: q1)
     		{
