@@ -25,8 +25,8 @@ public class ShingleThis
         BufferedReader in;
        // String inFile = args[0];
         String inFile = "data/greenEggs.txt";  //clintonStateOfTheUnion2000.txt
-       // int kgrams = Integer.parseInt(args[1]);
-        int kgrams = 2;
+       // int kgrams = Integer.parseInt(args[1]); 
+        int kgrams = 2; //changing this to test different k values
 
         ShingleThis work = new ShingleThis(inFile,kgrams);
 
@@ -59,12 +59,12 @@ public class ShingleThis
     public void grammify() {
     	//iterates through all the words in the file, stopping in a way that, depending
     	//on what k is, stops so the last word is included in a k-length shingle
-    	for(int i = 0; i < wordsInFile.size() - k + 1; i++)
+    	for(int i = 0; i < count - k + 1; i++)
     	{
     		String str = "";
-    		//starts looping through the file starting from the index i, stopping when when 
+    		//starts looping through the file starting from the index i, stopping when 
     		//either the last word has been looped through, or the loop has counted k times forward
-    		for (int j = i; j < i + k && j < wordsInFile.size(); j++)
+    		for (int j = i; j < i + k && j < count; j++)
     		{
     			//Concatenates all the words that are k times forward, including i into
     			//one string to be enqueued
@@ -73,7 +73,7 @@ public class ShingleThis
     		}
     		//remove leading whitespace
     		str.trim();
-    		//if a duplicate is detected, duplicate's value becomes true and 
+    		//if a duplicate is detected, the boolean variable becomes true and 
     		//str is not enqueued
     		boolean duplicate = false;
     		for(String s: q1)
