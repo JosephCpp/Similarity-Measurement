@@ -57,17 +57,38 @@ public class ShingleThis
     }
 
     public void grammify() {
+    	//iterates through all the words in the file, stopping at the size minus the k value so the k value plus one
+    	//always includes the last word perfectly
     	for(int i = 0; i < wordsInFile.size() - k + 1; i++)
     	{
     		String str = "";
+    		//starts looping through the file starting from the index i, stopping when when 
+    		//either the last word has been looped through, or the loop has counted k times foward
+    		//
     		for (int j = i; j < i + k && j < wordsInFile.size(); j++)
     		{
 //    			if(j < wordsInFile.size())
+    			//Concatenate the word to the string, then add a sapce
     			str += wordsInFile.get(j) + " ";
     			
     		}
 //    		q1.en
-    		q1.enqueue(str);
+    		//remove leading whitespace
+    		str.trim();
+    		//if a duplicate is detected, it is not queued.
+    		boolean duplicate = false;
+    		for(String s: q1)
+    		{
+    			if (s.equals(str))
+    			{
+    				duplicate = true;
+    			}
+    		}
+    		if (!duplicate)
+    		{
+    			q1.enqueue(str);
+    			
+    		}
     	}
 
     }
