@@ -23,6 +23,7 @@ public class ShingleThis
     {
         String str;
         BufferedReader in;
+        //uses arfs when
        // String inFile = args[0];
         String inFile = "data/greenEggs.txt";  //clintonStateOfTheUnion2000.txt
        // int kgrams = Integer.parseInt(args[1]); 
@@ -90,5 +91,5 @@ public class ShingleThis
     		}
     	}
 
-    }
+    } // end of grammify
 }//end class
