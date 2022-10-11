@@ -5,7 +5,6 @@ import java.util.*;
 
 public class ShingleThis 
 {
-    private String inFile;  //input file
     private ArrayList<String> wordsInFile;  //file converted to an array/list of Strings
     private Queue<String> q1;  //Queue to hold the final answer
     private int count = 0;   // count of number of words
@@ -13,7 +12,6 @@ public class ShingleThis
 
     public ShingleThis(String fileName, int kgrams)
     {   
-        inFile = fileName;
         k = kgrams;
         q1 = new Queue<String>(); //your k-grams will be stored here for your answer
         wordsInFile = new ArrayList<String>();  
@@ -23,7 +21,6 @@ public class ShingleThis
     {
         String str;
         BufferedReader in;
-        //uses arfs when
        // String inFile = args[0];
         String inFile = "data/greenEggs.txt";  //clintonStateOfTheUnion2000.txt
        // int kgrams = Integer.parseInt(args[1]); 
