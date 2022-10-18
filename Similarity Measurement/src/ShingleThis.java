@@ -2,7 +2,7 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.util.*;
 
-
+//file is meant for testing obtaining the shingles/kgrams of a text file
 public class ShingleThis 
 {
     private ArrayList<String> wordsInFile;  //file converted to an array/list of Strings
